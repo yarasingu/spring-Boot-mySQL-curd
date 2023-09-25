@@ -40,7 +40,16 @@ public class PgmanService {
     }
 
     public ResponseStructure<List<PgmanDto>> getPgmanByName(String name) {
-        return null;
+        List<PgmanDto> list = dao.getPgmanByName(name);
+		if (list.isEmpty())
+			throw new DataNotFoundExecption("Data Not Found With Name- " + name);
+		else {
+			ResponseStructure<List<PgmanDto>> structure = new ResponseStructure<List<PgmanDto>>();
+			structure.setData(list);
+			structure.setMessage("Data Found");
+			structure.setStatus(HttpStatus.FOUND.value());
+			return structure;
+		}
     }
 
     public ResponseStructure<PgmanDto> updatePgman(PgmanDto pgmanDto, int id) {
