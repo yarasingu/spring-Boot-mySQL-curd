@@ -61,7 +61,13 @@ public class PgmanService {
     }
 
     public ResponseStructure<String> deletePgmanById(int id) {
-        return null;
+        PgmanDto pgman = dao.fetchPgmanById(id);
+		dao.delete(id);
+		ResponseStructure<String> structure = new ResponseStructure<String>();
+		structure.setData("Data Deleted with Id- " + pgman.getId());
+		structure.setMessage("Data Deleted");
+		structure.setStatus(HttpStatus.OK.value());
+		return structure;
     }
 
     public ResponseStructure<PgmanDto> getPgmanByEmail(String email) {
