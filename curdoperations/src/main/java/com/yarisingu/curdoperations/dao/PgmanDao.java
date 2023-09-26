@@ -1,6 +1,6 @@
 package com.yarisingu.curdoperations.dao;
 
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +48,9 @@ public class PgmanDao {
 		return repository.findByRoomNo(roomNo);
 	}
 
-	public List<PgmanDto> getPgmanByDateOfJoinAndEnd(Date join, Date end) {
-		return repository.findByDateJoinAnddateEnd(join,end);
-	}
+	// public List<PgmanDto> getPgmanByDateOfJoinAndEnd(Date join, Date end) {
+	// 	return repository.findByDateJoinAnddateEnd(join,end);
+	// }
 
 	public void delete(int id) {
 		repository.deleteById(id);

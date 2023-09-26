@@ -1,6 +1,6 @@
 package com.yarisingu.curdoperations.controller;
 
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,10 +60,10 @@ public class PgmanController {
 		return new ResponseEntity<ResponseStructure<List<PgmanDto>>>(service.getPgmansByRoomNo(roomNo), HttpStatus.FOUND);
 	}
 	
-	@GetMapping("/Pgmans/join/{dateJoin}/end/{dateEnd}")
-	public ResponseEntity<ResponseStructure<List<PgmanDto>>> getStudentsByJoinAndEnd(@PathVariable Date dateJoin,@PathVariable Date dateEnd) {
-		return new ResponseEntity<ResponseStructure<List<PgmanDto>>>(service.getStudentsByJoinAndEnd(dateJoin,dateEnd), HttpStatus.FOUND);
-	}
+	// @GetMapping("/Pgmans/join/{dateJoin}/end/{dateEnd}")
+	// public ResponseEntity<ResponseStructure<List<PgmanDto>>> getStudentsByJoinAndEnd(@PathVariable Date dateJoin,@PathVariable Date dateEnd) {
+	// 	return new ResponseEntity<ResponseStructure<List<PgmanDto>>>(service.getStudentsByJoinAndEnd(dateJoin,dateEnd), HttpStatus.FOUND);
+	// }
 	
 	@DeleteMapping("/pgman/{id}")
 	public ResponseEntity<ResponseStructure<String>> deletePgmanById(@PathVariable int id) {

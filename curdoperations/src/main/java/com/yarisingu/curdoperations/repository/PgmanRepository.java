@@ -17,7 +17,7 @@ public interface PgmanRepository extends JpaRepository<PgmanDto, Integer> {
 
 	List<PgmanDto> findByRoomNo(int roomNo);
 
-	List<PgmanDto> findByDateJoinAnddateEnd(Date dateJoin, Date dateEnd);
+	//List<PgmanDto> findByDateJoinAnddateEnd(Date dateJoin, Date dateEnd);
 
     
 }
